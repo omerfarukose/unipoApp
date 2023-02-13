@@ -1,10 +1,9 @@
 import {Text} from 'react-native';
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 
-export const TasksScreen = (props) => {
+export const TasksScreen = () => {
     return(
         <MainScreen
-            {...props}
             title={"Tasks"}>
 
             <Text>

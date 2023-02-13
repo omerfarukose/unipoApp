@@ -2,16 +2,16 @@ import {Image, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'rea
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {myColors} from '../../../values/Colors/Colors';
 import {mySampleData} from '../../../values/SampleData/SampleData';
-import {RoleItem} from '../General/RoleItem';
+import {navigate} from '../../../pages/Router/RootNavigation';
 
-export const ProjectCard = ( { navigation } ) => {
+export const ProjectCard = () => {
 
     let cardData = mySampleData.projectCardData
 
     return(
         <TouchableWithoutFeedback
             onPress={() => {
-                navigation.navigate('ProjectDetailScreen');
+                navigate('ProjectDetailScreen');
             }}>
 
             <View

@@ -5,8 +5,9 @@ import {myColors} from '../../values/Colors/Colors';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {useState} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
+import {navigate} from '../Router/RootNavigation';
 
-export const ProfileScreen = ({ navigation }) => {
+export const ProfileScreen = () => {
 
     const [name, setName] = useState("Ömer Faruk KÖSE");
 
@@ -55,7 +56,7 @@ export const ProfileScreen = ({ navigation }) => {
 
         return(
             <TouchableOpacity
-                onPress={() => navigation.navigate(navigateTo)}
+                onPress={() => navigate(navigateTo)}
                 style={{
                     backgroundColor: myColors.pastelFive,
                     height: wp(30),

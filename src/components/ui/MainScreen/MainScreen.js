@@ -8,7 +8,7 @@ import {myGoBack} from '../../../pages/Router/RootNavigation';
 
 export const MainScreen = ( props ) => {
 
-    let { navigation, goBack = true, style, title } = props;
+    let { backButton , style, title } = props;
 
     return(
         <View
@@ -56,7 +56,7 @@ export const MainScreen = ( props ) => {
                     }}>
 
                     {
-                        goBack &&
+                        backButton &&
                         <TouchableOpacity
                             onPress={() => {
                                 myGoBack()
@@ -99,11 +99,11 @@ export const MainScreen = ( props ) => {
 }
 
 MainScreen.propTypes = {
-    goBack: PropTypes.bool,
+    backButton: PropTypes.bool,
     style: PropTypes.object,
     title: PropTypes.string
 }
 
 MainScreen.defaultProps = {
-    goBack: true
+    backButton: true
 }

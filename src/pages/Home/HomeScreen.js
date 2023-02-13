@@ -4,11 +4,10 @@ import {ProjectCard} from '../../components/ui/Card/ProjectCard';
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 import {myColors} from '../../values/Colors/Colors';
 
-export const HomeScreen = (props) => {
+export const HomeScreen = () => {
 
     return(
         <MainScreen
-            {...props}
             style={{
                 backgroundColor: myColors.pastelFive
             }}>
@@ -27,12 +26,12 @@ export const HomeScreen = (props) => {
 
                 </Text>
 
-                <ProjectCard {...props} type={1}/>
-                <ProjectCard {...props} type={2}/>
-                <ProjectCard {...props} type={3}/>
-                <ProjectCard {...props} type={4}/>
-                <ProjectCard {...props} type={5}/>
-                <ProjectCard {...props} type={6}/>
+                <ProjectCard type={1}/>
+                <ProjectCard type={2}/>
+                <ProjectCard type={3}/>
+                <ProjectCard type={4}/>
+                <ProjectCard type={5}/>
+                <ProjectCard type={6}/>
 
             </ScrollView>
         </MainScreen>

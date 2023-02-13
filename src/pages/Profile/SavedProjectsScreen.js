@@ -1,10 +1,9 @@
 import {Text} from 'react-native';
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 
-export const SavedProjectsScreen = (props) => {
+export const SavedProjectsScreen = () => {
     return(
         <MainScreen
-            {...props}
             title={"Saved"}>
 
             <Text>

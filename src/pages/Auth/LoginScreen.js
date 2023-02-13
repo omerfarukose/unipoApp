@@ -1,6 +1,6 @@
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 import {myColors} from '../../values/Colors/Colors';
-import {Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Text, View} from 'react-native';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import * as React from 'react';
 import {useContext, useState} from 'react';
@@ -17,7 +17,6 @@ export const LoginScreen = ( ) => {
 
     return(
         <MainScreen
-            goBack={false}
             style={{
                 backgroundColor: myColors.pastelFive,
             }}>
@@ -37,7 +36,9 @@ export const LoginScreen = ( ) => {
                         textAlign: "center",
                         marginBottom: hp(2)
                     }}>
+
                     Login
+
                 </Text>
 
                 <MyInput value={username} setValue={setUsername} placeholder={"E-mail"} />
@@ -68,7 +69,9 @@ export const LoginScreen = ( ) => {
                             marginBottom: hp(0.5),
                             color: myColors.navbarIconColor
                         }}>
+
                         Don't you have a Unipo account yet?
+
                     </Text>
 
                     <Text
@@ -78,13 +81,12 @@ export const LoginScreen = ( ) => {
                             color: myColors.navbarIconColor,
                             textDecorationLine: 'underline'
                         }}>
+
                         Create an account
+
                     </Text>
 
                 </View>
-
-
-
 
             </View>
 

@@ -6,7 +6,7 @@ import {myColors} from '../../values/Colors/Colors';
 import {MyButton} from '../../components/ui/Button/MyButton';
 import {useState} from 'react';
 
-export const ProjectDetailScreen = ( props ) => {
+export const ProjectDetailScreen = () => {
 
     let projectData = mySampleData.projectCardData
 
@@ -14,7 +14,6 @@ export const ProjectDetailScreen = ( props ) => {
 
     return(
         <MainScreen
-            {...props}
             title={"Project Details"}>
 
             <View

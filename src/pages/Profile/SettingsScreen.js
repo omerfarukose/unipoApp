@@ -6,13 +6,12 @@ import {useContext} from 'react';
 import {widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {myColors} from '../../values/Colors/Colors';
 
-export const SettingsScreen = (props) => {
+export const SettingsScreen = () => {
 
     const {setIsLogin} = useContext(LoginContext);
 
     return(
         <MainScreen
-            {...props}
             title={"Settings"}>
 
             <View
