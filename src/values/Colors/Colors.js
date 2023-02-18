@@ -5,6 +5,7 @@ export let myColors = {
     pastelFour: "#C9F4AA",
     pastelFive: "#BCCEF8",
     pastelSix: "#FCC2FC",
+    pastelSeven: "#8DCEB8",
     piLightBlue: "#0984e3",
     darkBlueButtonBGColor: "#1948AA",
     navbarIconColor: "#64688D",

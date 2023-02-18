@@ -34,9 +34,9 @@ export const NotificationsScreen = ( ) => {
                 <NotificationCard notificationType={1}/>
                 <NotificationCard notificationType={2}/>
                 <NotificationCard notificationType={3}/>
-                <NotificationCard notificationType={4}/>
-                <NotificationCard notificationType={5}/>
-                <NotificationCard notificationType={6}/>
+                <NotificationCard notificationType={4} isRead={true}/>
+                <NotificationCard notificationType={5} isRead={true}/>
+                <NotificationCard notificationType={6} isRead={true}/>
 
                 <Text
                     style={{

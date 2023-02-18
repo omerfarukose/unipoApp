@@ -98,6 +98,7 @@ export const Router = ( ) => {
                     tabBarIcon: ({ color, size }) => <Feather name={getTabBarIcon(route.name)} size={size} color={color} />,
                 })}>
                 <UserTab.Screen name="HomeStack" component={HomeStackScreen} />
+                <UserTab.Screen name="SearchScreen" component={SearchScreen} />
                 <UserTab.Screen name="LoginScreen" component={LoginScreen} />
             </UserTab.Navigator>
         )
@@ -106,7 +107,7 @@ export const Router = ( ) => {
     const UserTabNavigator = () => {
         return(
             <UserTab.Navigator
-                initialRouteName={"HomeStack"}
+                initialRouteName={"ProfileStack"}
                 screenOptions={({ route }) => ({
                     headerShown: false,
                     tabBarShowLabel: false,
