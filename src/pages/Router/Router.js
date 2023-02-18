@@ -5,7 +5,7 @@ import {ProfileScreen} from '../Profile/ProfileScreen';
 import {ProjectsScreen} from '../Profile/ProjectsScreen';
 import {TasksScreen} from '../Profile/TasksScreen';
 import {InvitesScreen} from '../Profile/InvitesScreen';
-import {NotesScreen} from '../Profile/NotesScreen';
+import {NotesScreen} from '../Profile/Notes/NotesScreen';
 import {SavedProjectsScreen} from '../Profile/SavedProjectsScreen';
 import {SettingsScreen} from '../Profile/SettingsScreen';
 import {myColors} from '../../values/Colors/Colors';
@@ -19,6 +19,7 @@ import {useContext, useRef} from 'react';
 import {LoginContext} from '../../contexts/LoginContext';
 import {ProjectDetailScreen} from '../Home/ProjectDetailScreen';
 import {navigationRef} from './RootNavigation';
+import {NoteDetailScreen} from '../Profile/Notes/NoteDetailScreen';
 
 const UserTab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -67,6 +68,7 @@ export const Router = ( ) => {
                 <Stack.Screen name="TasksScreen" component={TasksScreen} />
                 <Stack.Screen name="InvitesScreen" component={InvitesScreen} />
                 <Stack.Screen name="NotesScreen" component={NotesScreen} />
+                <Stack.Screen name="NoteDetailScreen" component={NoteDetailScreen} />
                 <Stack.Screen name="SavedProjectsScreen" component={SavedProjectsScreen} />
                 <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
             </Stack.Navigator>

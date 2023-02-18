@@ -74,7 +74,7 @@ export const NotificationCard = ( props ) => {
 
                     <Text
                         style={{
-                            color: myColors.navbarIconColor,
+                            color: myColors.softPurple,
                             fontWeight: "500",
                             marginRight: 4,
                         }}>
@@ -85,7 +85,7 @@ export const NotificationCard = ( props ) => {
 
                     <Text
                         style={{
-                            color: myColors.navbarIconColor,
+                            color: myColors.softPurple,
                             fontWeight: "400",
                         }}>
 
@@ -97,7 +97,7 @@ export const NotificationCard = ( props ) => {
 
                 <Text
                     style={{
-                        color: myColors.navbarIconColor,
+                        color: myColors.softPurple,
                     }}>
                     2 hours ago
                 </Text>

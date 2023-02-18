@@ -28,7 +28,7 @@ export const SettingsScreen = () => {
                         color: "white"
                     }}
                     buttonStyle={{
-                        backgroundColor: myColors.notificationBadgeColor,
+                        backgroundColor: myColors.logoutColor,
                         width: wp(90)
                     }}/>
 

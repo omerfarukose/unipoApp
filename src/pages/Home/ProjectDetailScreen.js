@@ -46,7 +46,7 @@ export const ProjectDetailScreen = () => {
                             title={"Message"}
                             buttonStyle={{
                                 width: wp(45),
-                                backgroundColor: myColors.piLightBlue,
+                                backgroundColor: myColors.lightBlue,
                             }}/>
 
                         <MyButton
@@ -56,7 +56,7 @@ export const ProjectDetailScreen = () => {
                             title={isSaved ? "Saved" : "Save"}
                             buttonStyle={{
                                 width: wp(45),
-                                backgroundColor: isSaved ? myColors.darkBlueButtonBGColor : myColors.piLightBlue,
+                                backgroundColor: isSaved ? myColors.darkBlueColor : myColors.lightBlue,
                             }}/>
                     </View>
 
@@ -91,7 +91,7 @@ export const ProjectDetailScreen = () => {
                             style={{
                                 fontSize: hp(2.5),
                                 fontWeight: "bold",
-                                color: myColors.navbarIconColor
+                                color: myColors.softPurple
                             }}>
                             Ömer Faruk KÖSE
                         </Text>
@@ -100,7 +100,7 @@ export const ProjectDetailScreen = () => {
                             style={{
                                 fontSize: hp(2),
                                 fontWeight: "bold",
-                                color: myColors.navbarIconColor
+                                color: myColors.softPurple
                             }}>
                             Pamukkale Üniversitesi
                         </Text>
@@ -114,7 +114,7 @@ export const ProjectDetailScreen = () => {
                     style={{
                         fontSize: hp(3),
                         fontWeight: "bold",
-                        color: myColors.navbarIconColor,
+                        color: myColors.softPurple,
                         marginVertical: hp(2),
                     }}>
                     { projectData.projectName }
@@ -125,7 +125,7 @@ export const ProjectDetailScreen = () => {
                     style={{
                         fontSize: hp(2),
                         fontWeight: "bold",
-                        color: myColors.navbarIconColor
+                        color: myColors.softPurple
                     }}>
                     { projectData.projectDescription }
                 </Text>

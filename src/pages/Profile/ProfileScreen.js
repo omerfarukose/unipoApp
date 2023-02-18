@@ -42,7 +42,7 @@ export const ProfileScreen = () => {
                 <TextInput
                     style={{
                         fontWeight: "bold",
-                        color: myColors.navbarIconColor
+                        color: myColors.softPurple
                     }}
                     onChangeText={setValue}
                     value={value}

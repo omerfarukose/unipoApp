@@ -30,7 +30,7 @@ export const ProjectCard = () => {
                     style={{
                         fontSize: hp(2),
                         fontWeight: "bold",
-                        color: myColors.navbarIconColor
+                        color: myColors.softPurple
                     }}>
 
                     {cardData.projectName}
@@ -41,7 +41,7 @@ export const ProjectCard = () => {
                 <Text
                     style={{
                         flex: 1,
-                        color: myColors.navbarIconColor,
+                        color: myColors.softPurple,
                         marginTop: hp(1),
                     }}>
 
@@ -78,7 +78,7 @@ export const ProjectCard = () => {
                             style={{
                                 fontSize: hp(1.5),
                                 fontWeight: "bold",
-                                color: myColors.navbarIconColor
+                                color: myColors.softPurple
                             }}>
                             Ömer Faruk KÖSE
                         </Text>
@@ -87,7 +87,7 @@ export const ProjectCard = () => {
                             style={{
                                 fontSize: hp(1.5),
                                 fontWeight: "bold",
-                                color: myColors.navbarIconColor
+                                color: myColors.softPurple
                             }}>
                             Pamukkale Üniversitesi
                         </Text>

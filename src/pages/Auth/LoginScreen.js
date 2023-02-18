@@ -51,7 +51,7 @@ export const LoginScreen = ( ) => {
                         backgroundColor: "white",
                     }}
                     textStyle={{
-                        color: myColors.navbarIconColor
+                        color: myColors.softPurple
                     }}
                     title={"Login"}/>
 
@@ -67,7 +67,7 @@ export const LoginScreen = ( ) => {
                             fontWeight: "bold",
                             fontSize: hp(2),
                             marginBottom: hp(0.5),
-                            color: myColors.navbarIconColor
+                            color: myColors.softPurple
                         }}>
 
                         Don't you have a Unipo account yet?
@@ -78,7 +78,7 @@ export const LoginScreen = ( ) => {
                         style={{
                             fontWeight: "bold",
                             fontSize: hp(3),
-                            color: myColors.navbarIconColor,
+                            color: myColors.softPurple,
                             textDecorationLine: 'underline'
                         }}>
 

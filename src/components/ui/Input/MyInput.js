@@ -37,5 +37,5 @@ MyInput.propTypes = {
 }
 
 MyInput.defaultProps = {
-    placeholderColor: myColors.navbarIconColor
+    placeholderColor: myColors.softPurple
 }

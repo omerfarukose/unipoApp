@@ -26,7 +26,7 @@ export const NotificationsScreen = ( ) => {
                         marginLeft: hp(2.5),
                         marginVertical: hp(1),
                         marginTop: hp(2),
-                        color: myColors.navbarIconColor
+                        color: myColors.softPurple
                     }}>
                     Today
                 </Text>
@@ -44,7 +44,7 @@ export const NotificationsScreen = ( ) => {
                         fontSize: hp(2.5),
                         marginLeft: hp(2.5),
                         marginVertical: hp(1),
-                        color: myColors.navbarIconColor
+                        color: myColors.softPurple
                     }}>
                     Yesterday
                 </Text>
