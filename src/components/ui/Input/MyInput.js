@@ -11,16 +11,12 @@ export const MyInput = ( props ) => {
     return(
         <TextInput
             style={{
-                fontWeight: "bold",
-                color: "red",
-                backgroundColor: "white",
-                width: wp(90),
-                height: hp(5),
-                borderRadius: 18,
-                padding: hp(2),
-                marginBottom: hp(2),
+                padding: hp(1),
                 ...style
             }}
+            spellCheck={false}
+            autoCorrect={false}
+            multiline
             placeholderTextColor={placeholderColor}
             placeholder={placeholder}
             onChangeText={setValue}

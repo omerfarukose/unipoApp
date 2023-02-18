@@ -1,18 +1,13 @@
 import {Image, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {myColors} from '../../../values/Colors/Colors';
-import {mySampleData} from '../../../values/SampleData/SampleData';
 import {navigate} from '../../../pages/Router/RootNavigation';
 
-export const ProjectCard = () => {
-
-    let cardData = mySampleData.projectCardData
+export const ProjectCard = (item, index) => {
 
     return(
         <TouchableWithoutFeedback
-            onPress={() => {
-                navigate('ProjectDetailScreen');
-            }}>
+            onPress={() => navigate('ProjectDetailScreen', {projectData: item})}>
 
             <View
                 style={{
@@ -33,7 +28,7 @@ export const ProjectCard = () => {
                         color: myColors.softPurple
                     }}>
 
-                    {cardData.projectName}
+                    {item.projectName}
 
                 </Text>
 
@@ -45,7 +40,7 @@ export const ProjectCard = () => {
                         marginTop: hp(1),
                     }}>
 
-                    {cardData.projectDescription}
+                    {item.projectDescription}
 
                 </Text>
 
@@ -80,7 +75,9 @@ export const ProjectCard = () => {
                                 fontWeight: "bold",
                                 color: myColors.softPurple
                             }}>
-                            Ömer Faruk KÖSE
+
+                            {item.ownerName}
+
                         </Text>
 
                         <Text
@@ -89,14 +86,16 @@ export const ProjectCard = () => {
                                 fontWeight: "bold",
                                 color: myColors.softPurple
                             }}>
-                            Pamukkale Üniversitesi
+
+                            {item.ownerUniversity}
+
                         </Text>
 
                     </View>
 
                 </View>
-            </View>
 
+            </View>
 
         </TouchableWithoutFeedback>
     )

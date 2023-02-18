@@ -3,8 +3,6 @@ import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-nativ
 import {myColors} from '../../../values/Colors/Colors';
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Feather from 'react-native-vector-icons/Feather';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import {MyIcon} from '../Icon/MyIcon';
 
 export const MyButton = ( props ) => {
@@ -30,24 +28,29 @@ export const MyButton = ( props ) => {
                 <MyIcon iconName={iconName} iconSize={iconSize} iconColor={iconColor} iconGroup={iconGroup}/>
             }
 
-            <Text
-                style={{
-                    color: "white",
-                    fontSize: hp(2),
-                    fontWeight: "bold",
-                    marginLeft: 10,
-                    ...textStyle
-                }}>
+            {
+                title &&
+                <Text
+                    style={{
+                        color: "white",
+                        fontSize: hp(2),
+                        fontWeight: "bold",
+                        marginLeft: 10,
+                        ...textStyle
+                    }}>
 
-                { title }
+                    { title }
 
-            </Text>
+                </Text>
+            }
+
+
         </TouchableOpacity>
     )
 }
 
 MyButton.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     onButtonClick: PropTypes.func,
     buttonStyle: PropTypes.object,
     textStyle: PropTypes.object,
@@ -60,4 +63,5 @@ MyButton.propTypes = {
 MyButton.defaultProps = {
     iconColor: "white",
     iconSize: 2,
+    iconGroup: "Feather"
 }

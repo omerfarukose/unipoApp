@@ -1,20 +1,20 @@
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 import {Image, Text, View} from 'react-native';
-import {mySampleData} from '../../values/SampleData/SampleData';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {myColors} from '../../values/Colors/Colors';
 import {MyButton} from '../../components/ui/Button/MyButton';
 import {useState} from 'react';
+import {myStrings} from '../../values/Strings/Strings';
 
-export const ProjectDetailScreen = () => {
+export const ProjectDetailScreen = ({ route }) => {
 
-    let projectData = mySampleData.projectCardData
+    const { projectData } = route.params;
 
-    const [isSaved, setIsSaved] = useState(false);
+    const [isSaved, setIsSaved] = useState(projectData.isSaved);
 
     return(
         <MainScreen
-            title={"Project Details"}>
+            title={myStrings.screenTitle.projectDetails}>
 
             <View
                 style={{
@@ -28,9 +28,10 @@ export const ProjectDetailScreen = () => {
                         marginBottom: hp(1),
                     }}>
 
+                    {/*join request button*/}
                     <MyButton
                         iconName={"plus"}
-                        title={"Join Request"}
+                        title={myStrings.button.joinRequest}
                         buttonStyle={{
                             marginBottom: hp(1),
                             backgroundColor: myColors.pastelSeven,
@@ -41,23 +42,27 @@ export const ProjectDetailScreen = () => {
                             flexDirection: "row",
                             justifyContent: "space-between",
                         }}>
+
+                        {/*message button*/}
                         <MyButton
                             iconName={"message-square"}
-                            title={"Message"}
+                            title={myStrings.button.message}
                             buttonStyle={{
                                 width: wp(45),
                                 backgroundColor: myColors.lightBlue,
                             }}/>
 
+                        {/*save button*/}
                         <MyButton
                             onButtonClick={() => setIsSaved(!isSaved)}
                             iconName={isSaved ? "bookmark" : "bookmark-outline"}
                             iconGroup={"Ionicons"}
-                            title={isSaved ? "Saved" : "Save"}
+                            title={isSaved ? myStrings.button.saved : myStrings.button.save}
                             buttonStyle={{
                                 width: wp(45),
                                 backgroundColor: isSaved ? myColors.darkBlueColor : myColors.lightBlue,
                             }}/>
+
                     </View>
 
                 </View>
@@ -69,6 +74,7 @@ export const ProjectDetailScreen = () => {
                         alignItems: "center",
                     }}>
 
+                    {/*owner image*/}
                     <Image
                         style={{
                             height: hp(9),
@@ -87,22 +93,28 @@ export const ProjectDetailScreen = () => {
                             marginLeft: hp(1)
                         }}>
 
+                        {/*owner name*/}
                         <Text
                             style={{
                                 fontSize: hp(2.5),
                                 fontWeight: "bold",
                                 color: myColors.softPurple
                             }}>
-                            Ömer Faruk KÖSE
+
+                            { projectData.ownerName }
+
                         </Text>
 
+                        {/*owner university*/}
                         <Text
                             style={{
                                 fontSize: hp(2),
                                 fontWeight: "bold",
                                 color: myColors.softPurple
                             }}>
-                            Pamukkale Üniversitesi
+
+                            { projectData.ownerUniversity }
+
                         </Text>
 
                     </View>
@@ -117,7 +129,9 @@ export const ProjectDetailScreen = () => {
                         color: myColors.softPurple,
                         marginVertical: hp(2),
                     }}>
+
                     { projectData.projectName }
+
                 </Text>
 
                 {/*project description*/}
@@ -127,7 +141,9 @@ export const ProjectDetailScreen = () => {
                         fontWeight: "bold",
                         color: myColors.softPurple
                     }}>
+
                     { projectData.projectDescription }
+
                 </Text>
 
             </View>

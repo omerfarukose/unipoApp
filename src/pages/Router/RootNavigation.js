@@ -8,7 +8,7 @@ export function navigate(name, params) {
     }
 }
 
-export function myGoBack() {
+export function goBack() {
     if (navigationRef.current) {
         navigationRef.current.goBack(null);
     }

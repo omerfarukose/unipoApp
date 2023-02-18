@@ -1,10 +1,24 @@
-import { ScrollView, Text, View} from 'react-native';
+import {FlatList, ScrollView, Text, View} from 'react-native';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {ProjectCard} from '../../components/ui/Card/ProjectCard';
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 import {myColors} from '../../values/Colors/Colors';
+import {myStrings} from '../../values/Strings/Strings';
+import {useEffect, useState} from 'react';
+import {sampleProjectDataList} from '../../values/SampleData/SampleData';
+import * as React from 'react';
 
 export const HomeScreen = () => {
+
+    const [projectList, setProjectList] = useState([]);
+
+    useEffect(() => {
+        getProjectList()
+    }, []);
+
+    function getProjectList(){
+        setProjectList(sampleProjectDataList)
+    }
 
     return(
         <MainScreen
@@ -12,28 +26,11 @@ export const HomeScreen = () => {
                 backgroundColor: myColors.pastelFive
             }}>
 
-            <ScrollView>
+            <FlatList
+                data={projectList}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({item, index}) => ProjectCard(item, index)}/>
 
-                <Text
-                    style={{
-                        fontSize: hp(4),
-                        fontWeight: "bold",
-                        margin: hp(1),
-                        color: "white"
-                    }}>
-
-                    Projects you might be interested in
-
-                </Text>
-
-                <ProjectCard type={1}/>
-                <ProjectCard type={2}/>
-                <ProjectCard type={3}/>
-                <ProjectCard type={4}/>
-                <ProjectCard type={5}/>
-                <ProjectCard type={6}/>
-
-            </ScrollView>
         </MainScreen>
     )
 }

@@ -4,7 +4,8 @@ import {myColors} from '../../../values/Colors/Colors';
 import Feather from 'react-native-vector-icons/Feather';
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import {myGoBack} from '../../../pages/Router/RootNavigation';
+import {goBack} from '../../../pages/Router/RootNavigation';
+import {myStrings} from '../../../values/Strings/Strings';
 
 export const MainScreen = ( props ) => {
 
@@ -35,7 +36,7 @@ export const MainScreen = ( props ) => {
                         color: "white"
                     }}>
 
-                    unipo.
+                    { myStrings.appName }
 
                 </Text>
 
@@ -58,15 +59,15 @@ export const MainScreen = ( props ) => {
                     {
                         backButton &&
                         <TouchableOpacity
-                            onPress={() => {
-                                myGoBack()
-                            }}
+                            onPress={() => goBack()}
                             style={{
                                 position: "absolute",
                                 left: 0,
                                 marginLeft: hp(2),
                             }}>
+
                             <Feather name={"chevron-left"} size={hp(3.5)} color={"white"} />
+
                         </TouchableOpacity>
                     }
 
