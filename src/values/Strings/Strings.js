@@ -22,6 +22,7 @@ export const myStrings = {
         createNote: "Create Note",
         saved: "Saved",
         settings: "Settings",
+        manageProject: "Manage Project"
     },
     placeholder: {
         eMail: "e-mail",
@@ -40,5 +41,6 @@ export const myStrings = {
         cancel: "Cancel",
         delete: "Delete",
         category: "Category",
+        create: "Create",
     }
 }

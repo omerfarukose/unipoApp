@@ -15,12 +15,13 @@ import {LoginScreen} from '../Auth/LoginScreen';
 import {SearchScreen} from '../SearchScreen';
 import {CreateProjectScreen} from '../CreateProjectScreen';
 import {NotificationsScreen} from '../NotificationsScreen';
-import {useContext, useRef} from 'react';
+import {useContext} from 'react';
 import {LoginContext} from '../../contexts/LoginContext';
 import {ProjectDetailScreen} from '../Home/ProjectDetailScreen';
 import {navigationRef} from './RootNavigation';
 import {NoteDetailScreen} from '../Profile/Notes/NoteDetailScreen';
 import {CreateNoteScreen} from '../Profile/Notes/CreateNoteScreen';
+import {ManageProjectScreen} from '../Project/ManageProjectScreen';
 
 const UserTab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -73,6 +74,7 @@ export const Router = ( ) => {
                 <Stack.Screen name="CreateNoteScreen" component={CreateNoteScreen} />
                 <Stack.Screen name="SavedProjectsScreen" component={SavedProjectsScreen} />
                 <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+                <Stack.Screen name="ManageProjectScreen" component={ManageProjectScreen} />
             </Stack.Navigator>
         );
     }

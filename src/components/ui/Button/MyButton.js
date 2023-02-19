@@ -7,11 +7,13 @@ import {MyIcon} from '../Icon/MyIcon';
 
 export const MyButton = ( props ) => {
 
-    let { title, onButtonClick, buttonStyle, textStyle, iconName, iconGroup, iconSize, iconColor, iconPosition} = props
+    let { title, onButtonClick, buttonStyle, textStyle, iconName, iconGroup, iconSize,
+          iconColor, iconPosition, isDisabled } = props
 
     return(
         <TouchableOpacity
             onPress={onButtonClick}
+            disabled={isDisabled}
             style={{
                 backgroundColor: myColors.pastelFive,
                 height: hp(5),
@@ -63,6 +65,7 @@ MyButton.propTypes = {
     iconColor: PropTypes.string,
     iconSize: PropTypes.number,
     iconPosition: PropTypes.string,
+    isDisabled: PropTypes.bool
 }
 
 MyButton.defaultProps = {
@@ -70,4 +73,5 @@ MyButton.defaultProps = {
     iconSize: 2,
     iconGroup: "Feather",
     iconPosition: "right",
+    isDisabled: false,
 }

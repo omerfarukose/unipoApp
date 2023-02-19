@@ -26,8 +26,8 @@ export const MyInput = ( props ) => {
 
 MyInput.propTypes = {
     placeholder: PropTypes.string,
-    value: PropTypes.any,
-    setValue: PropTypes.any,
+    value: PropTypes.any.isRequired,
+    setValue: PropTypes.any.isRequired,
     style: PropTypes.object,
     placeholderColor: PropTypes.string
 }
