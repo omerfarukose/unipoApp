@@ -8,11 +8,14 @@ import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {myColors} from '../values/Colors/Colors';
 import {DismissKeyboardView} from '../components/ui/General/DismissKeyboardView';
 import {navigate} from './Router/RootNavigation';
+import {sampleProjectDataList} from '../values/SampleData/SampleData';
 
 export const CreateProjectScreen = () => {
 
     const [projectTitle, setProjectTitle] = useState("");
     const [projectDescription, setProjectDescription] = useState("");
+
+    let sampleProjectData = sampleProjectDataList[2]
 
     return(
         <MainScreen
@@ -24,7 +27,7 @@ export const CreateProjectScreen = () => {
                 {/*category & cancel button*/}
                 <MyButton
                     onButtonClick={() => {
-                        navigate('ManageProjectScreen');
+                        navigate('ManageProjectScreen', {item:sampleProjectData});
                         setProjectTitle("")
                         setProjectDescription("")
                     }}
