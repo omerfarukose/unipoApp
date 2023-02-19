@@ -4,7 +4,10 @@ export const myStrings = {
         homeHeader: "Projects you might be interested in",
         login: "Login",
         createAccountOne: `Don't you have a ${this.appName} account yet?`,
-        createAccountTwo: "Create an account"
+        createAccountTwo: "Create an account",
+    },
+    dialog: {
+        deleteNote: "Are you sure you want to delete this note?",
     },
     screenTitle: {
         projectDetails: "Project Details",
@@ -15,12 +18,15 @@ export const myStrings = {
         tasks: "Tasks",
         invites: "Invites",
         notes: "Notes",
+        createNote: "Create Note",
         saved: "Saved",
         settings: "Settings",
     },
     placeholder: {
         eMail: "e-mail",
         password: "password",
+        noteTitle: "Note title",
+        noteDescription: "Note description",
     },
     button: {
         joinRequest: "Join Request",
@@ -30,5 +36,8 @@ export const myStrings = {
         newNote: "New Note",
         logout: "Logout",
         login: "Login",
+        cancel: "Cancel",
+        delete: "Delete",
+        category: "Category",
     }
 }

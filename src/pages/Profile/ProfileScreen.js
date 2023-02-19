@@ -3,15 +3,24 @@ import {Image, ScrollView, Text, TextInput, TouchableOpacity, View} from 'react-
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 import {myColors} from '../../values/Colors/Colors';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import {navigate} from '../Router/RootNavigation';
+import {sampleUserData} from '../../values/SampleData/SampleData';
 
 export const ProfileScreen = () => {
 
+    const [userInfo, setUserInfo] = useState({});
     const [name, setName] = useState("Ömer Faruk KÖSE");
-
     const [department, setDepartment] = useState("Computer Science");
+
+    useEffect(() => {
+        getUserInfo()
+    }, []);
+
+    function getUserInfo(){
+        setUserInfo(sampleUserData)
+    }
 
     const _renderInput = ( title, value, setValue ) => {
         return(
@@ -53,7 +62,6 @@ export const ProfileScreen = () => {
     }
 
     const _renderCardItem =  ( text, icon, navigateTo ) => {
-
         return(
             <TouchableOpacity
                 onPress={() => navigate(navigateTo)}
@@ -72,7 +80,9 @@ export const ProfileScreen = () => {
                         fontWeight: "bold",
                         fontSize: hp(2),
                     }}>
+
                     {text}
+
                 </Text>
 
                 <Feather name={icon} size={hp(5)} color={"white"} />
@@ -86,6 +96,7 @@ export const ProfileScreen = () => {
 
             {/* header */}
             <View>
+
                 {/*image view*/}
                 <View
                     style={{
@@ -94,7 +105,9 @@ export const ProfileScreen = () => {
                         alignItems: "center",
                         justifyContent: "space-evenly",
                     }}>
+
                     <TouchableOpacity>
+
                         <Image
                             style={{
                                 height: hp(15),
@@ -105,11 +118,12 @@ export const ProfileScreen = () => {
                                 overflow: "hidden"
                             }}
                             source={require('../../assets/images/user-img.jpeg')}/>
+
                     </TouchableOpacity>
 
                 </View>
 
-                {/*university*/}
+                {/* university */}
                 <View
                     style={{
                         width: wp(100),
@@ -128,9 +142,13 @@ export const ProfileScreen = () => {
                             fontSize: hp(2),
                             includeFontPadding: false
                         }}>
-                        Pamukkale University
+
+                        { userInfo.university }
+
                     </Text>
+
                 </View>
+
             </View>
 
             {/* card list */}
@@ -169,32 +187,8 @@ export const ProfileScreen = () => {
 
                 { _renderInput("Department", department, setDepartment)}
 
-                {/*save button*/}
-                <TouchableOpacity
-                    style={{
-                        backgroundColor: myColors.pastelFive,
-                        height: hp(4),
-                        width: wp(30),
-                        borderRadius: 10,
-                        alignItems: "center",
-                        justifyContent: "center",
-                        alignSelf: "center",
-                        marginTop: hp(3),
-                    }}>
-
-                    <Text
-                        style={{
-                            color: "white",
-                            fontWeight:"bold",
-                            fontSize: hp(2.5),
-                        }}>
-
-                        Save
-
-                    </Text>
-
-                </TouchableOpacity>
             </View>
+
         </MainScreen>
     )
 }

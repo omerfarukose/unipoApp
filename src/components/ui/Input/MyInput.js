@@ -1,5 +1,5 @@
 import {TextInput} from 'react-native';
-import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {myColors} from '../../../values/Colors/Colors';
 import * as React from 'react';
 import PropTypes from 'prop-types';
@@ -10,17 +10,17 @@ export const MyInput = ( props ) => {
 
     return(
         <TextInput
-            style={{
-                padding: hp(1),
-                ...style
-            }}
             spellCheck={false}
             autoCorrect={false}
             multiline
             placeholderTextColor={placeholderColor}
             placeholder={placeholder}
             onChangeText={setValue}
-            value={value}/>
+            value={value}
+            style={{
+                padding: hp(1),
+                ...style
+            }}/>
     )
 }
 

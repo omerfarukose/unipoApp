@@ -86,12 +86,9 @@ export const MainScreen = ( props ) => {
                 </View>
             }
 
-            <View
-                style={{
-                    flex: 1
-                }}>
+            <View style={{  flex: 1 }}>
 
-                {props.children}
+                { props.children }
 
             </View>
 

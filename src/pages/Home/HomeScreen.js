@@ -1,9 +1,7 @@
-import {FlatList, ScrollView, Text, View} from 'react-native';
-import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {FlatList} from 'react-native';
 import {ProjectCard} from '../../components/ui/Card/ProjectCard';
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 import {myColors} from '../../values/Colors/Colors';
-import {myStrings} from '../../values/Strings/Strings';
 import {useEffect, useState} from 'react';
 import {sampleProjectDataList} from '../../values/SampleData/SampleData';
 import * as React from 'react';

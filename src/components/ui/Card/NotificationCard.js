@@ -1,33 +1,11 @@
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
 import {myColors} from '../../../values/Colors/Colors';
+import PropTypes from 'prop-types';
 
 export const NotificationCard = ( props ) => {
 
-    let { notificationType, isRead = false } = props
-
-    let bgColor = myColors.pastelOne;
-
-    switch (notificationType) {
-        case 1:
-            bgColor = myColors.pastelOne
-            break;
-        case 2:
-            bgColor = myColors.pastelTwo
-            break;
-        case 3:
-            bgColor = myColors.pastelThree
-            break;
-        case 4:
-            bgColor = myColors.pastelFour
-            break;
-        case 5:
-            bgColor = myColors.pastelFive
-            break;
-        case 6:
-            bgColor = myColors.pastelSix
-            break;
-    }
+    let { isRead } = props
 
     return(
         <TouchableOpacity
@@ -99,11 +77,21 @@ export const NotificationCard = ( props ) => {
                     style={{
                         color: myColors.softPurple,
                     }}>
+
                     2 hours ago
+
                 </Text>
 
             </View>
 
         </TouchableOpacity>
     )
+}
+
+NotificationCard.prototype = {
+    isRead: PropTypes.bool
+}
+
+NotificationCard.defaultProp = {
+    isRead: false
 }

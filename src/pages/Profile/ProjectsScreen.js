@@ -63,12 +63,10 @@ export const ProjectsScreen = () => {
         <MainScreen
             title={'Projects'}>
 
-
             {_renderProjectItem()}
             {_renderProjectItem()}
             {_renderProjectItem()}
-            {_renderProjectItem()
-            }
+            {_renderProjectItem()}
 
         </MainScreen>
     )

@@ -1,13 +1,13 @@
-import {Text, TouchableOpacity} from 'react-native';
-import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import {myColors} from '../../../values/Colors/Colors';
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import {Text, TouchableOpacity} from 'react-native';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import {myColors} from '../../../values/Colors/Colors';
 import {MyIcon} from '../Icon/MyIcon';
 
 export const MyButton = ( props ) => {
 
-    let { title, onButtonClick, buttonStyle, textStyle, iconName, iconGroup, iconSize, iconColor} = props
+    let { title, onButtonClick, buttonStyle, textStyle, iconName, iconGroup, iconSize, iconColor, iconPosition} = props
 
     return(
         <TouchableOpacity
@@ -15,8 +15,8 @@ export const MyButton = ( props ) => {
             style={{
                 backgroundColor: myColors.pastelFive,
                 height: hp(5),
-                alignItems: "center",
                 padding: hp(1),
+                alignItems: "center",
                 justifyContent: "center",
                 borderRadius: 10,
                 flexDirection: "row",
@@ -24,7 +24,7 @@ export const MyButton = ( props ) => {
             }}>
 
             {
-                iconName &&
+                iconName && iconPosition === "left" &&
                 <MyIcon iconName={iconName} iconSize={iconSize} iconColor={iconColor} iconGroup={iconGroup}/>
             }
 
@@ -32,10 +32,10 @@ export const MyButton = ( props ) => {
                 title &&
                 <Text
                     style={{
+                        textAlign: "center",
                         color: "white",
                         fontSize: hp(2),
                         fontWeight: "bold",
-                        marginLeft: 10,
                         ...textStyle
                     }}>
 
@@ -44,6 +44,10 @@ export const MyButton = ( props ) => {
                 </Text>
             }
 
+            {
+                iconName && iconPosition === "right" &&
+                <MyIcon iconName={iconName} iconSize={iconSize} iconColor={iconColor} iconGroup={iconGroup}/>
+            }
 
         </TouchableOpacity>
     )
@@ -57,11 +61,13 @@ MyButton.propTypes = {
     iconName: PropTypes.string,
     iconGroup: PropTypes.string,
     iconColor: PropTypes.string,
-    iconSize: PropTypes.number
+    iconSize: PropTypes.number,
+    iconPosition: PropTypes.string,
 }
 
 MyButton.defaultProps = {
     iconColor: "white",
     iconSize: 2,
-    iconGroup: "Feather"
+    iconGroup: "Feather",
+    iconPosition: "right",
 }

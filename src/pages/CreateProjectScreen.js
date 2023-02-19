@@ -4,13 +4,24 @@ import {MainScreen} from '../components/ui/MainScreen/MainScreen';
 export const CreateProjectScreen = () => {
     return(
         <MainScreen
-            goBack={false}
-            title={"Create Project"}>
+            title={"Create Project"}
+            backButton={false}>
 
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>CreateProjectScreen</Text>
+            <View
+                style={{
+                    flex: 1,
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}>
+
+                <Text>
+
+                    Create Project Screen
+
+                </Text>
 
             </View>
+
         </MainScreen>
     )
 }

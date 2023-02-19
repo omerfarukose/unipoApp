@@ -1,23 +1,16 @@
-import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {ScrollView, Text} from 'react-native';
 import {MainScreen} from '../components/ui/MainScreen/MainScreen';
 import {myColors} from '../values/Colors/Colors';
-import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
+import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import {NotificationCard} from '../components/ui/Card/NotificationCard';
 
 export const NotificationsScreen = ( ) => {
-
     return(
         <MainScreen
-            style={{
-                backgroundColor: "white",
-            }}
-            goBack={false}
-            title={"Notifications"}>
+            title={"Notifications"}
+            backButton={false}>
 
-            <ScrollView
-                style={{
-                    flex: 1,
-                }}>
+            <ScrollView style={{ flex: 1 }}>
 
                 <Text
                     style={{
@@ -28,15 +21,17 @@ export const NotificationsScreen = ( ) => {
                         marginTop: hp(2),
                         color: myColors.softPurple
                     }}>
+
                     Today
+
                 </Text>
 
-                <NotificationCard notificationType={1}/>
-                <NotificationCard notificationType={2}/>
-                <NotificationCard notificationType={3}/>
-                <NotificationCard notificationType={4} isRead={true}/>
-                <NotificationCard notificationType={5} isRead={true}/>
-                <NotificationCard notificationType={6} isRead={true}/>
+                <NotificationCard/>
+                <NotificationCard/>
+                <NotificationCard/>
+                <NotificationCard isRead={true}/>
+                <NotificationCard isRead={true}/>
+                <NotificationCard isRead={true}/>
 
                 <Text
                     style={{
@@ -46,14 +41,17 @@ export const NotificationsScreen = ( ) => {
                         marginVertical: hp(1),
                         color: myColors.softPurple
                     }}>
+
                     Yesterday
+
                 </Text>
 
-                <NotificationCard notificationType={1} isRead={true}/>
-                <NotificationCard notificationType={2} isRead={true}/>
-                <NotificationCard notificationType={3} isRead={true}/>
+                <NotificationCard isRead={true}/>
+                <NotificationCard isRead={true}/>
+                <NotificationCard isRead={true}/>
 
             </ScrollView>
+
         </MainScreen>
     )
 }

@@ -2,11 +2,12 @@ import {FlatList, Text, TouchableOpacity, View} from 'react-native';
 import {MainScreen} from '../../../components/ui/MainScreen/MainScreen';
 import {myColors} from '../../../values/Colors/Colors';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
-import Feather from 'react-native-vector-icons/Feather';
 import * as React from 'react';
 import {navigate} from '../../Router/RootNavigation';
 import {sampleNoteDataList} from '../../../values/SampleData/SampleData';
 import {useEffect, useState} from 'react';
+import {myStrings} from '../../../values/Strings/Strings';
+import {MyButton} from '../../../components/ui/Button/MyButton';
 
 export const NotesScreen = () => {
 
@@ -43,7 +44,7 @@ export const NotesScreen = () => {
                         borderBottomLeftRadius: 10,
                         height: "100%",
                         width: hp(2),
-                    }} />
+                    }}/>
 
                 <Text
                     style={{
@@ -67,33 +68,24 @@ export const NotesScreen = () => {
         <MainScreen
             title={"Notes"}>
 
-            <TouchableOpacity
-                style={{
-                    alignSelf: "flex-end",
-                    flexDirection: "row",
-                    alignItems: "center",
-                    justifyContent: "space-evenly",
+            <MyButton
+                onButtonClick={() => navigate("CreateNoteScreen")}
+                title={myStrings.button.newNote}
+                iconName={"plus"}
+                iconSize={3}
+                textStyle={{
+                    marginRight: hp(1),
+                    color: "white",
+                    fontWeight: "bold",
+                    fontSize: hp(1.7),
+                }}
+                buttonStyle={{
                     backgroundColor: myColors.pastelFour,
-                    padding: hp(1),
                     width: hp(15),
-                    borderRadius: 10,
                     margin: hp(1),
                     marginBottom: 0,
-                }}>
-
-                <Text
-                    style={{
-                        color: "white",
-                        fontWeight: "bold"
-                    }}>
-
-                    New Note
-
-                </Text>
-
-                <Feather name={"plus"} size={hp(3)} color={"white"} />
-
-            </TouchableOpacity>
+                    alignSelf: "flex-end",
+                }}/>
 
             <FlatList
                 data={noteList}
