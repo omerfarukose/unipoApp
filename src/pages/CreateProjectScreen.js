@@ -1,10 +1,6 @@
-import {
-    StyleSheet,
-    Text,
-    View,
-} from 'react-native';
-import {MainScreen} from '../components/ui/MainScreen/MainScreen';
 import React, {useState} from 'react';
+import {Text, View} from 'react-native';
+import {MainScreen} from '../components/ui/MainScreen/MainScreen';
 import {MyInput} from '../components/ui/Input/MyInput';
 import {MyButton} from '../components/ui/Button/MyButton';
 import {myStrings} from '../values/Strings/Strings';
@@ -20,7 +16,7 @@ export const CreateProjectScreen = () => {
 
     return(
         <MainScreen
-            title={"Create Project"}
+            title={myStrings.screenTitle.createProject}
             backButton={false}>
 
             <DismissKeyboardView>
@@ -41,12 +37,14 @@ export const CreateProjectScreen = () => {
                         backgroundColor: (projectTitle !== "" && projectDescription !== "") ? myColors.pastelFour : 'gray'
                     }}/>
 
+                {/*input view*/}
                 <View
                     style={{
                         marginTop: hp(2),
                         padding: hp(1),
                     }}>
 
+                    {/*title input*/}
                     <Text
                         style={{
                             fontSize: hp(2.5),
@@ -55,7 +53,7 @@ export const CreateProjectScreen = () => {
                             marginLeft: hp(0.5),
                         }}>
 
-                        Project Title
+                        { myStrings.title.projectTitle }
 
                     </Text>
 
@@ -76,6 +74,7 @@ export const CreateProjectScreen = () => {
 
                     </View>
 
+                    {/*description view*/}
                     <Text
                         style={{
                             fontSize: hp(2.5),
@@ -85,7 +84,7 @@ export const CreateProjectScreen = () => {
                             marginTop: hp(4),
                         }}>
 
-                        Project Description
+                        { myStrings.title.projectDescription }
 
                     </Text>
 
@@ -101,11 +100,11 @@ export const CreateProjectScreen = () => {
                         }}>
 
                         <MyInput
+                            setValue={setProjectDescription}
+                            value={projectDescription}
                             style={{
                                 height: hp(28),
-                            }}
-                            setValue={setProjectDescription}
-                            value={projectDescription}/>
+                            }}/>
 
                     </View>
 
@@ -116,28 +115,3 @@ export const CreateProjectScreen = () => {
         </MainScreen>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    inner: {
-        padding: 24,
-        flex: 1,
-        justifyContent: 'space-around',
-    },
-    header: {
-        fontSize: 36,
-        marginBottom: 48,
-    },
-    textInput: {
-        height: 40,
-        borderColor: '#000000',
-        borderBottomWidth: 1,
-        marginBottom: 36,
-    },
-    btnContainer: {
-        backgroundColor: 'white',
-        marginTop: 12,
-    },
-});

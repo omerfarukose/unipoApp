@@ -1,14 +1,17 @@
 export const myStrings = {
     appName: "unipo.",
+    scanQr: "Scan Project QR",
+    shareQr: "Share your project with QR code",
     title: {
         homeHeader: "Projects you might be interested in",
         login: "Login",
         createAccountOne: `Don't you have a ${this.appName} account yet?`,
         createAccountTwo: "Create an account",
+        projectTitle: "Project Title",
+        projectDescription: "Project Description",
     },
     dialog: {
         deleteNote: "Are you sure you want to delete this note?",
-        test: "test"
     },
     screenTitle: {
         projectDetails: "Project Details",

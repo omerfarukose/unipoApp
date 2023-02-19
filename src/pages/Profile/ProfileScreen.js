@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Image, ScrollView, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 import {myColors} from '../../values/Colors/Colors';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
@@ -49,13 +49,12 @@ export const ProfileScreen = () => {
                 </Text>
 
                 <TextInput
+                    onChangeText={setValue}
+                    value={value}
                     style={{
                         fontWeight: "bold",
                         color: myColors.softPurple
-                    }}
-                    onChangeText={setValue}
-                    value={value}
-                />
+                    }}/>
 
             </View>
         )
@@ -109,6 +108,7 @@ export const ProfileScreen = () => {
                     <TouchableOpacity>
 
                         <Image
+                            source={require('../../assets/images/user-img.jpeg')}
                             style={{
                                 height: hp(15),
                                 width: hp(15),
@@ -116,8 +116,7 @@ export const ProfileScreen = () => {
                                 borderColor: "white",
                                 borderWidth: hp(0.3),
                                 overflow: "hidden"
-                            }}
-                            source={require('../../assets/images/user-img.jpeg')}/>
+                            }}/>
 
                     </TouchableOpacity>
 

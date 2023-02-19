@@ -76,15 +76,15 @@ export const ProjectDetailScreen = ({ route }) => {
 
                     {/*owner image*/}
                     <Image
+                        source={require('./../../assets/images/user-img-2.jpeg')}
                         style={{
-                            height: hp(9),
-                            width: hp(9),
+                            height: hp(7.5),
+                            width: hp(7.5),
                             borderRadius: 99,
-                            borderColor: "white",
+                            borderColor: myColors.pastelFive,
                             borderWidth: hp(0.3),
                             overflow: "hidden"
-                        }}
-                        source={require('./../../assets/images/user-img-2.jpeg')}/>
+                        }}/>
 
                     <View
                         style={{

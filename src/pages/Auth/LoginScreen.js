@@ -7,6 +7,7 @@ import {useContext, useState} from 'react';
 import {MyButton} from '../../components/ui/Button/MyButton';
 import {MyInput} from '../../components/ui/Input/MyInput';
 import {LoginContext} from '../../contexts/LoginContext';
+import {myStrings} from '../../values/Strings/Strings';
 
 export const LoginScreen = ( ) => {
 
@@ -37,7 +38,7 @@ export const LoginScreen = ( ) => {
                         marginBottom: hp(2)
                     }}>
 
-                    Login
+                    { myStrings.title.login }
 
                 </Text>
 
@@ -46,14 +47,14 @@ export const LoginScreen = ( ) => {
                 <MyInput value={password} setValue={setPassword} placeholder={"Password"} />
 
                 <MyButton
+                    title={"Login"}
                     onButtonClick={() => setIsLogin(true)}
                     buttonStyle={{
                         backgroundColor: "white",
                     }}
                     textStyle={{
                         color: myColors.softPurple
-                    }}
-                    title={"Login"}/>
+                    }}/>
 
                 <View
                     style={{
@@ -70,7 +71,7 @@ export const LoginScreen = ( ) => {
                             color: myColors.softPurple
                         }}>
 
-                        Don't you have a Unipo account yet?
+                        { myStrings.title.createAccountOne }
 
                     </Text>
 
@@ -82,7 +83,7 @@ export const LoginScreen = ( ) => {
                             textDecorationLine: 'underline'
                         }}>
 
-                        Create an account
+                        { myStrings.title.createAccountTwo }
 
                     </Text>
 

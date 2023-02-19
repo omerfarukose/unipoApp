@@ -34,6 +34,7 @@ export const ProjectsScreen = () => {
                 }}>
 
                 <Image
+                    source={require('../../assets/images/bitmo-img.png')}
                     style={{
                         height: hp(8),
                         width: hp(8),
@@ -41,8 +42,7 @@ export const ProjectsScreen = () => {
                         borderColor: "white",
                         borderWidth: hp(0.3),
                         overflow: "hidden"
-                    }}
-                    source={require('../../assets/images/bitmo-img.png')}/>
+                    }}/>
 
                 <View
                     style={{
