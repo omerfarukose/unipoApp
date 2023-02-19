@@ -9,7 +9,7 @@ export let myColors = {
     lightBlue: "#0984e3",
     darkBlueColor: "#1948AA",
     softPurple: "#64688D",
-    infoColor: '#4F588A',
+    darkPurple: '#4F588A',
     logoutColor: "#FF3B30",
     noteCategoryColors: [
         "#FF0032",

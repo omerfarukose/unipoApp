@@ -20,6 +20,7 @@ import {LoginContext} from '../../contexts/LoginContext';
 import {ProjectDetailScreen} from '../Home/ProjectDetailScreen';
 import {navigationRef} from './RootNavigation';
 import {NoteDetailScreen} from '../Profile/Notes/NoteDetailScreen';
+import {CreateNoteScreen} from '../Profile/Notes/CreateNoteScreen';
 
 const UserTab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -69,6 +70,7 @@ export const Router = ( ) => {
                 <Stack.Screen name="InvitesScreen" component={InvitesScreen} />
                 <Stack.Screen name="NotesScreen" component={NotesScreen} />
                 <Stack.Screen name="NoteDetailScreen" component={NoteDetailScreen} />
+                <Stack.Screen name="CreateNoteScreen" component={CreateNoteScreen} />
                 <Stack.Screen name="SavedProjectsScreen" component={SavedProjectsScreen} />
                 <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
             </Stack.Navigator>
@@ -95,7 +97,7 @@ export const Router = ( ) => {
                 screenOptions={({ route }) => ({
                     headerShown: false,
                     tabBarShowLabel: false,
-                    tabBarActiveTintColor: myColors.infoColor,
+                    tabBarActiveTintColor: myColors.darkPurple,
                     tabBarInactiveTintColor: 'gray',
                     tabBarIcon: ({ color, size }) => <Feather name={getTabBarIcon(route.name)} size={size} color={color} />,
                 })}>
@@ -113,7 +115,7 @@ export const Router = ( ) => {
                 screenOptions={({ route }) => ({
                     headerShown: false,
                     tabBarShowLabel: false,
-                    tabBarActiveTintColor: myColors.infoColor,
+                    tabBarActiveTintColor: myColors.darkPurple,
                     tabBarInactiveTintColor: 'gray',
                     tabBarIcon: ({ color, size }) => <Feather name={getTabBarIcon(route.name)} size={size} color={color} />,
                 })}>

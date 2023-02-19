@@ -1,10 +1,7 @@
-export const mySampleData = {
-    projectCardData: {
-        ownerName: "Ömer Faruk KÖSE",
-        ownerUniversity: "Pamukkale University",
-        projectName: "My Sample Project Name",
-        projectDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce condimentum facilisis nunc. Donec congue consequat libero vel fringilla. Maecenas pulvinar, metus nec laoreet molestie, lorem mi feugiat nisi, id aliquam risus enim ut arcu. In et dapibus dui."
-    }
+export const sampleUserData = {
+    name: "Ömer Faruk KÖSe",
+    university: "Pamukkale University",
+    department: "Computer Science"
 }
 
 export const sampleProjectDataList = [
@@ -52,17 +49,11 @@ export const sampleProjectDataList = [
     },
 ]
 
-export const sampleUserData = {
-    name: "Ömer Faruk KÖSe",
-    university: "Pamukkale University",
-    department: "Computer Science"
-}
-
 export const sampleNoteDataList = [
     {
         category: 0,
         title: "Sample Note Title - 1",
-        description: "Sample Note Description - 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet nulla condimentum, posuere neque eu, dignissim nibh. Donec id nulla quam. Nullam auctor mi eu ultrices mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nec ex non tellus imperdiet condimentum.Sample Note Description - 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet nulla condimentum, posuere neque eu, dignissim nibh. Donec id nulla quam. Nullam auctor mi eu ultrices mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nec ex non tellus imperdiet condimentum.Sample Note Description - 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet nulla condimentum, posuere neque eu, dignissim nibh. Donec id nulla quam. Nullam auctor mi eu ultrices mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nec ex non tellus imperdiet condimentum.Sample Note Description - 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet nulla condimentum, posuere neque eu, dignissim nibh. Donec id nulla quam. Nullam auctor mi eu ultrices mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nec ex non tellus imperdiet condimentum. "
+        description: "Sample Note Description - 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet nulla condimentum, posuere neque eu, dignissim nibh. Donec id nulla quam. Nullam auctor mi eu ultrices mattis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nec ex non tellus imperdiet condimentum."
     },
     {
         category: 1,

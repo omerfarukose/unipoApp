@@ -1,4 +1,3 @@
-// to merge all providers
 import React, { cloneElement } from 'react';
 import {UserContextProvider} from './UserContext';
 import {LoginContextProvider} from './LoginContext';
@@ -17,7 +16,6 @@ export default function MainContextProvider({children}) {
 
     return (
         <ProviderComposer
-            // add providers to array of contexts
             contexts={[
                 <UserContextProvider/>,
                 <LoginContextProvider/>

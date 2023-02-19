@@ -32,7 +32,7 @@ export const NoteCategoryModal = (props) => {
                         borderRadius: 99,
                         height: hp(2),
                         width: hp(2),
-                    }} />
+                    }}/>
 
             </TouchableOpacity>
         )

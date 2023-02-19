@@ -1,12 +1,14 @@
 import React , {useEffect, useState} from 'react';
 import {MainScreen} from '../../../components/ui/MainScreen/MainScreen';
-import {Text, View, TouchableOpacity, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {View, TouchableWithoutFeedback, Keyboard} from 'react-native';
 import {myColors} from '../../../values/Colors/Colors';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import Modal from 'react-native-modalbox';
 import {MyButton} from '../../../components/ui/Button/MyButton';
 import {MyInput} from '../../../components/ui/Input/MyInput';
 import {NoteCategoryModal} from '../../../components/ui/Modal/NoteCategoryModal';
+import {NoteCategoryButton} from '../../../components/ui/Button/NoteCategoryButton';
+import {myStrings} from '../../../values/Strings/Strings';
+import {MyModal} from '../../../components/ui/Modal/MyModal';
 
 export const NoteDetailScreen = ({ route }) => {
 
@@ -42,41 +44,9 @@ export const NoteDetailScreen = ({ route }) => {
                             justifyContent: "flex-end"
                         }}>
 
-                        {/*category button*/}
-                        <TouchableOpacity
-                            onPress={() => setIsColorModalVisible(true)}
-                            style={{
-                                backgroundColor: myColors.pastelFive,
-                                height: hp(6),
-                                padding: hp(1),
-                                alignItems: "center",
-                                justifyContent: "center",
-                                borderRadius: 10,
-                                flexDirection: "row",
-                                marginRight: hp(2),
-                            }}>
-
-                            <Text
-                                style={{
-                                    fontWeight: "bold",
-                                    color: "white",
-                                    fontSize: hp(2),
-                                }}>
-
-                                Category
-
-                            </Text>
-
-                            <View
-                                style={{
-                                    backgroundColor: myColors.noteCategoryColors[selectedNoteCategory],
-                                    borderRadius: 99,
-                                    height: hp(2),
-                                    width: hp(2),
-                                    marginLeft: hp(1),
-                                }}/>
-
-                        </TouchableOpacity>
+                        <NoteCategoryButton
+                            selectedCategory={selectedNoteCategory}
+                            onButtonPress={() => setIsColorModalVisible(true)}/>
 
                         {/*delete button*/}
                         <MyButton
@@ -118,6 +88,23 @@ export const NoteDetailScreen = ({ route }) => {
                 isVisible={isColorModalVisible}
                 onClose={() => setIsColorModalVisible(false)}
                 onItemClick={(type) => setSelectedNoteCategory(type)}/>
+
+            <MyModal
+                isVisible={isDeleteDialogVisible}
+                onClose={() => setIsDeleteDialogVisible(false)}
+                title={myStrings.dialog.deleteNote}
+                leftButtonText={myStrings.button.delete}
+                rightButtonText={myStrings.button.cancel}
+                rightButtonClick={() => {setIsDeleteDialogVisible(false)}}
+                leftButtonClick={() => {setIsDeleteDialogVisible(false)}}
+                containerStyle={{
+                    backgroundColor: "white",
+                    justifyContent: 'space-evenly',
+                    alignItems: 'center',
+                    height: hp(20),
+                    width: wp(90),
+                    borderRadius: 10,
+                }}/>
 
         </MainScreen>
     )
