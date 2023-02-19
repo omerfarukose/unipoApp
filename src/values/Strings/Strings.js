@@ -8,6 +8,7 @@ export const myStrings = {
     },
     dialog: {
         deleteNote: "Are you sure you want to delete this note?",
+        test: "test"
     },
     screenTitle: {
         projectDetails: "Project Details",
