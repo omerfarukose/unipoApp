@@ -1,16 +1,29 @@
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {FlatList, Image, Text, TouchableOpacity, View} from 'react-native';
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 import {heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import * as React from 'react';
 import {myColors} from '../../values/Colors/Colors';
 import Feather from 'react-native-vector-icons/Feather';
+import {navigate} from '../Router/RootNavigation';
+import {useEffect, useState} from 'react';
+import {sampleProjectDataList} from '../../values/SampleData/SampleData';
 
 export const ProjectsScreen = () => {
 
-    const _renderProjectItem = ( ) => {
+    const [projectList, setProjectList] = useState([]);
+
+    useEffect(() => {
+        getProjectList()
+    }, []);
+
+    function getProjectList(){
+        setProjectList(sampleProjectDataList)
+    }
+
+    const _renderProjectItem = (item, index) => {
         return(
             <TouchableOpacity
-                onPress={() => {}}
+                onPress={() => navigate("ManageProjectScreen", {item: item})}
                 style={{
                     backgroundColor: myColors.pastelFive,
                     marginHorizontal: hp(1),
@@ -39,11 +52,15 @@ export const ProjectsScreen = () => {
                     }}>
 
                     <Text style={{color: "white", fontWeight:"bold", fontSize: hp(2)}}>
-                        Project Name
+
+                        { item.projectName }
+
                     </Text>
 
                     <Text style={{color: "white", fontWeight:"bold", fontSize: hp(1.8)}}>
-                        Project University
+
+                        { item.ownerUniversity }
+
                     </Text>
                 </View>
 
@@ -63,10 +80,10 @@ export const ProjectsScreen = () => {
         <MainScreen
             title={'Projects'}>
 
-            {_renderProjectItem()}
-            {_renderProjectItem()}
-            {_renderProjectItem()}
-            {_renderProjectItem()}
+            <FlatList
+                data={projectList}
+                keyExtractor={(item, index) => index.toString()}
+                renderItem={({item, index}) => _renderProjectItem(item, index)}/>
 
         </MainScreen>
     )
