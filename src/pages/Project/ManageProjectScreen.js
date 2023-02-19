@@ -1,13 +1,12 @@
 import {MainScreen} from '../../components/ui/MainScreen/MainScreen';
 import {myStrings} from '../../values/Strings/Strings';
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
-import uuid from 'react-native-uuid';
 import {MyButton} from '../../components/ui/Button/MyButton';
 import React, {useState} from 'react';
 import {heightPercentageToDP as hp, widthPercentageToDP as wp} from 'react-native-responsive-screen';
-import {myColors} from '../../values/Colors/Colors';
 import Modal from 'react-native-modalbox';
+import {myColors} from '../../values/Colors/Colors';
 
 export const ManageProjectScreen = ({ route }) => {
 
@@ -21,10 +20,58 @@ export const ManageProjectScreen = ({ route }) => {
 
             <MyButton
                 onButtonClick={() => setIsQrVisible(true)}
-                title={"Show QR"}/>
+                iconName={"qr-code-sharp"}
+                iconGroup={"Ionicons"}
+                iconSize={3.5}
+                buttonStyle={{
+                    alignSelf: "flex-end",
+                    margin: hp(1),
+                    height: hp(5.5),
+                    width: hp(5.5),
+                    backgroundColor: myColors.darkBlueColor
+                }}/>
 
-            <Text>
-                Manage Project
+            <Text
+                style={{
+                    fontSize: hp(2.5),
+                    fontWeight: "bold",
+                    color: myColors.darkPurple,
+                }}>
+
+                { item.ownerName }
+
+            </Text>
+
+            <Text
+                style={{
+                    fontSize: hp(2.5),
+                    fontWeight: "bold",
+                    color: myColors.darkPurple,
+                }}>
+
+                { item.ownerUniversity }
+
+            </Text>
+
+            <Text
+                style={{
+                    marginTop: hp(3),
+                    fontSize: hp(3),
+                    fontWeight: "bold",
+                    color: myColors.darkPurple,
+                }}>
+
+                { item.projectName }
+
+            </Text>
+
+            <Text
+                style={{
+                    fontSize: hp(3),
+                    color: myColors.darkPurple,
+                }}>
+                { item.projectDescription }
+
             </Text>
 
             <Modal
@@ -45,7 +92,7 @@ export const ManageProjectScreen = ({ route }) => {
                 <QRCode
                     size={hp(20)}
                     value={item.qrCode}
-                    logo={require("../../assets/images/bitmo-img.png")}
+                    logo={require("../../assets/images/app-logo.png")}
                     logoSize={hp(5)}
                     logoBackgroundColor='transparent'/>
 
