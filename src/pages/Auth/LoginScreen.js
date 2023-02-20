@@ -42,9 +42,33 @@ export const LoginScreen = ( ) => {
 
                 </Text>
 
-                <MyInput value={username} setValue={setUsername} placeholder={"E-mail"} />
+                <MyInput
+                    style={{
+                        backgroundColor: "white",
+                        width: wp(90),
+                        borderRadius: 10,
+                        fontSize: hp(2.5),
+                        padding: hp(1),
+                        paddingLeft: hp(2),
+                        marginBottom: hp(2),
+                    }}
+                    value={username}
+                    setValue={setUsername}
+                    placeholder={" E-mail"} />
 
-                <MyInput value={password} setValue={setPassword} placeholder={"Password"} />
+                <MyInput
+                    style={{
+                        marginBottom: hp(2),
+                        backgroundColor: "white",
+                        width: wp(90),
+                        borderRadius: 10,
+                        fontSize: hp(2.5),
+                        padding: hp(1),
+                        paddingLeft: hp(2),
+                    }}
+                    value={password}
+                    setValue={setPassword}
+                    placeholder={"Password"} />
 
                 <MyButton
                     title={"Login"}

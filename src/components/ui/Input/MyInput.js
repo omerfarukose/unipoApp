@@ -21,7 +21,6 @@ export const MyInput = ( props ) => {
             onSubmitEditing={onSubmit}
             inputMode={inputMode}
             style={{
-                includeFontPadding: false,
                 ...style
             }}/>
     )
