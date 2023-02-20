@@ -38,6 +38,7 @@ export const MyButton = ( props ) => {
                         color: "white",
                         fontSize: hp(2),
                         fontWeight: "bold",
+                        marginHorizontal: hp(1),
                         ...textStyle
                     }}>
 

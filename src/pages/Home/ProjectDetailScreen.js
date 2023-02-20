@@ -5,12 +5,14 @@ import {myColors} from '../../values/Colors/Colors';
 import {MyButton} from '../../components/ui/Button/MyButton';
 import {useState} from 'react';
 import {myStrings} from '../../values/Strings/Strings';
+import {JoinRequestModal} from '../../components/ui/Modal/JoinRequestModal';
 
 export const ProjectDetailScreen = ({ route }) => {
 
     const { projectData } = route.params;
 
     const [isSaved, setIsSaved] = useState(projectData.isSaved);
+    const [isJoinModalVisible, setIsJoinModalVisible] = useState(false);
 
     return(
         <MainScreen
@@ -25,12 +27,12 @@ export const ProjectDetailScreen = ({ route }) => {
                 <View
                     style={{
                         justifyContent: "space-evenly",
-                        marginBottom: hp(1),
+                        marginBottom: hp(3),
                     }}>
 
                     {/*join request button*/}
                     <MyButton
-                        iconName={"plus"}
+                        onButtonClick={() => setIsJoinModalVisible(true)}
                         title={myStrings.button.joinRequest}
                         buttonStyle={{
                             marginBottom: hp(1),
@@ -45,7 +47,6 @@ export const ProjectDetailScreen = ({ route }) => {
 
                         {/*message button*/}
                         <MyButton
-                            iconName={"message-square"}
                             title={myStrings.button.message}
                             buttonStyle={{
                                 width: wp(45),
@@ -147,6 +148,11 @@ export const ProjectDetailScreen = ({ route }) => {
                 </Text>
 
             </View>
+
+            <JoinRequestModal
+                roleList={["front-end developer", "back-end developer", "Designer", "Tester"]}
+                isVisible={isJoinModalVisible}
+                onClose={() => setIsJoinModalVisible(false)}/>
 
         </MainScreen>
     )

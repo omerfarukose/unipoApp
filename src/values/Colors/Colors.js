@@ -5,7 +5,7 @@ export let myColors = {
     pastelFour: "#03C988",
     pastelFive: "#BCCEF8",
     pastelSix: "#FCC2FC",
-    pastelSeven: "#06cc60",
+    pastelSeven: "#03C988",
     lightBlue: "#0984e3",
     darkBlueColor: "#1948AA",
     softPurple: "#64688D",
