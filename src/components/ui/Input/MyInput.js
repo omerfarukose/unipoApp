@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 export const MyInput = ( props ) => {
 
-    let { placeholder, placeholderColor, value, setValue, style } = props
+    let { placeholder, placeholderColor, value, setValue, style, onSubmit, inputMode, returnKeyType } = props
 
     return(
         <TextInput
@@ -17,8 +17,11 @@ export const MyInput = ( props ) => {
             placeholder={placeholder}
             onChangeText={setValue}
             value={value}
+            returnKeyType={returnKeyType}
+            onSubmitEditing={onSubmit}
+            inputMode={inputMode}
             style={{
-                padding: hp(1),
+                includeFontPadding: false,
                 ...style
             }}/>
     )
