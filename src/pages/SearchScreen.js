@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {Platform, View} from 'react-native';
 import {MainScreen} from '../components/ui/MainScreen/MainScreen';
 import {myStrings} from '../values/Strings/Strings';
 import {MyButton} from '../components/ui/Button/MyButton';
@@ -11,6 +11,7 @@ import {QrScannerModal} from '../components/ui/Modal/QrScannerModal';
 import {MyInput} from '../components/ui/Input/MyInput';
 import Feather from 'react-native-vector-icons/Feather';
 import {DismissKeyboardView} from '../components/ui/General/DismissKeyboardView';
+import {check, PERMISSIONS, RESULTS, request, requestMultiple} from 'react-native-permissions';
 
 export const SearchScreen = () => {
 
@@ -36,6 +37,31 @@ export const SearchScreen = () => {
 
     function getProjectDataList(){
         setProjectList(sampleProjectDataList)
+    }
+
+    function RequestCameraPermission() {
+        return new Promise(function (resolve, reject) {
+            check(Platform === "android" ? PERMISSIONS.ANDROID.CAMERA : PERMISSIONS.IOS.CAMERA)
+                .then((result) => {
+
+                    if(result !== RESULTS.GRANTED) {
+                        request(Platform === "android" ? PERMISSIONS.ANDROID.CAMERA : PERMISSIONS.IOS.CAMERA)
+                            .then((response) => {
+                                if (response === RESULTS.BLOCKED || response === RESULTS.DENIED) {
+                                    reject(response);
+                                }
+                                else {
+                                    resolve(response);
+                                }
+                            })
+                            .catch((error) => {
+                                console.log("camera permission error: ", error);
+                                reject(RESULTS.DENIED);
+                            });
+                    }
+
+                })
+        })
     }
 
     return(
@@ -89,7 +115,11 @@ export const SearchScreen = () => {
                         }}>
 
                         <MyButton
-                            onButtonClick={() => setIsQrScannerVisible(true)}
+                            onButtonClick={() => {
+                                RequestCameraPermission().then(() => {
+                                    setIsQrScannerVisible(true);
+                                })
+                            }}
                             iconName={"qr-code-sharp"}
                             iconGroup={"Ionicons"}
                             title={"Scan QR"}
